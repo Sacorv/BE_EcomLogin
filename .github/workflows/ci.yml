@@ -1,0 +1,13 @@
+name: dotnet package
+
+on: [push]
+
+jobs:
+  build:
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '.net 6'
+    - run: dotnet build EcomLogin_API

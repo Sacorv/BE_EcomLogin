@@ -26,7 +26,14 @@ namespace EcomLogin_API.Logica
 
         public async Task<Usuario> BuscarUsuarioPorId(int id)
         {
-            return await _context.Usuarios.FindAsync(id);
+            var buscado = await _context.Usuarios.FindAsync(id);
+
+            if (buscado == null)
+            {
+                return null;
+            }
+
+            return buscado;
         }
 
         public async Task<List<Usuario>> Usuarios()

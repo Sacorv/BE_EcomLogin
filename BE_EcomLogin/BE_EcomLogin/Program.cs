@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<EcomLoginApiContext>();
 
 var app = builder.Build();

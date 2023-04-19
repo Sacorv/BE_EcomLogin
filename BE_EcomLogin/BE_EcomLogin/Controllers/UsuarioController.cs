@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BE_EcomLogin.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace BE_EcomLogin.Controllers
             _servicio = servicio;
         }
 
-        [HttpGet]
+        [HttpGet("/obtenerUsuarios")]
         public async Task<IActionResult> ObtenerUsuarios()
         {
             try
@@ -30,12 +30,18 @@ namespace BE_EcomLogin.Controllers
             }
         }
 
-        [HttpGet("id")]
+        [HttpGet("/buscarUsuario/id")]
         public async Task<IActionResult> ObtenerUsuario(int id)
         {
             try
             {
                 Usuario buscado = await _servicio.BuscarUsuarioPorId(id);
+
+                if (buscado == null)
+                {
+                    return NotFound();
+                }
+
                 return Ok(buscado);
             }
             catch(Exception ex)
