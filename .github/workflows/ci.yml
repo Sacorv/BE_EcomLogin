@@ -4,10 +4,15 @@ on: [push]
 
 jobs:
   build:
-    
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '3.1.x', '6.0.x' ]
+
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '.net 6'
+        dotnet-version: '.net .6'
     - run: dotnet build EcomLogin_API
