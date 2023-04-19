@@ -17,7 +17,7 @@ namespace BE_EcomLogin.Controllers
         }
 
 
-        [HttpGet("iniciarSesion")]
+        //[HttpGet("iniciarSesion")]
         public async Task<IActionResult> Acceder(String email, String clave)
         {
             try
