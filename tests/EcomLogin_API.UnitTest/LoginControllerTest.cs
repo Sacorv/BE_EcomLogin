@@ -29,7 +29,7 @@ namespace EcomLogin_API.UnitTest
         public void quePuedaObtener200OkAlIniciarSesionConClaveCorrectaTest()
         {
             String email = "kila@gmail.com";
-            String clave = "kila123";
+            String clave = "kila1233";
 
             Assert.IsType<OkObjectResult>(_loginController.Acceder(email, clave).Result);
         }
