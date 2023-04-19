@@ -25,9 +25,9 @@ jobs:
         dotnet-version: '6.0'
       
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build BE_EcomLogin --configuration Release --no-restore
     
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test BE_EcomLogin --no-restore --verbosity normal
 
     - run: dotnet build BE_EcomLogin
